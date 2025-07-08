@@ -2,21 +2,31 @@
   "name": "claude-code-execute",
   "module": "index.ts",
   "type": "module",
+  "bin": {
+    "claude-code-execute": "dist/index.js",
+    "ccx": "dist/index.js"
+  },
   "scripts": {
     "dev": "tsx index.ts",
-    "build": "bun build index.ts --outdir=dist --target=node --banner=\"#!/usr/bin/env node\"",
+    "build": "bun build index.ts --outdir=dist --external=node-pty --target=node --banner=\"#!/usr/bin/env node\"",
     "test": "bun test",
     "fmt": "prettier -w ."
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "es-main": "^1.3.0",
     "prettier": "^3.6.2"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
-    "es-main": "^1.3.0",
-    "yes-claude": "^1.2.0"
-  }
+    "yes-claude": "^1.7.0"
+  },
+  "version": "1.0.0",
+  "description": "To install dependencies:",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
