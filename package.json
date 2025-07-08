@@ -10,12 +10,15 @@
     "dev": "tsx index.ts",
     "build": "bun build index.ts --outdir=dist --external=node-pty --target=node --banner=\"#!/usr/bin/env node\"",
     "test": "bun test",
-    "fmt": "prettier -w ."
+    "fmt": "prettier -w .",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "es-main": "^1.3.0",
-    "prettier": "^3.6.2"
+    "husky": "^9.1.7",
+    "prettier": "^3.6.2",
+    "semantic-release": "^24.2.6"
   },
   "peerDependencies": {
     "typescript": "^5"
