@@ -1,6 +1,6 @@
 # claude-code-execute
 
-A command-line tool for executing prompts with Claude Code.
+A command-line tool for executing prompts with Claude Code until idle.
 
 ## Installation
 
