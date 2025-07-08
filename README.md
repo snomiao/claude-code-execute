@@ -1,15 +1,44 @@
 # claude-code-execute
 
-To install dependencies:
+A command-line tool for executing prompts with Claude Code.
+
+## Installation
 
 ```bash
+npm install -g claude-code-execute
+```
+
+## Usage
+
+You can use either the full command name or the short alias:
+
+```bash
+# Full command
+claude-code-execute "your prompt here"
+
+# Short alias
+ccx "your prompt here"
+```
+
+## Development
+
+```bash
+# Install dependencies
 bun install
+
+# Run in development mode
+bun run dev
+
+# Build for production
+bun run build
+
+# Run tests
+bun run test
+
+# Format code
+bun run fmt
 ```
 
-To run:
+## License
 
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.2.13. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+ISC
