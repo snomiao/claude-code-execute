@@ -2,5 +2,5 @@
 import yesClaude from "yes-claude";
 
 export default async function claudeCodeExecute(prompt: string) {
-    await yesClaude({ claudeArgs: [prompt], exitOnIdle: 30e3 }) // overwrite default 5e3 for more stable experience
+    await yesClaude({ claudeArgs: ['-c', prompt], exitOnIdle: 30e3 }) // overwrite default 5e3 for more stable experience
 }
