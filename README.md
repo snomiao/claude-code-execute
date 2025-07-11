@@ -39,6 +39,10 @@ bun run test
 bun run fmt
 ```
 
+## See also
+
+https://github.com/snomiao/copilot-continue.user.js
+
 ## License
 
 ISC
