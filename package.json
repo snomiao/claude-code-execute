@@ -32,6 +32,6 @@
   "type": "module",
   "dependencies": {
     "@types/jest": "^30.0.0",
-    "yes-claude": "^1.8.0"
+    "yes-claude": "^1.9.0"
   }
 }
