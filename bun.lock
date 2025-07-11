@@ -5,7 +5,7 @@
       "name": "claude-code-execute",
       "dependencies": {
         "@types/jest": "^30.0.0",
-        "yes-claude": "1.8.0",
+        "yes-claude": "^1.8.0",
       },
       "devDependencies": {
         "@types/bun": "^1.2.18",
