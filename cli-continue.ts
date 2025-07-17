@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
-
-
-import claudeCodeExecute from ".";
+import claudeCodeExecute from "./index";
 import pkg from './package.json';
 const prompt = process.argv.slice(2).join(' ')
 if (!prompt) {
@@ -12,4 +10,4 @@ if (!prompt) {
 }
 
 console.log(`claude-code-execute@${pkg.version}: `, prompt)
-await claudeCodeExecute(prompt)
+await claudeCodeExecute('--continue', prompt)

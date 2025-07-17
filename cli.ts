@@ -2,7 +2,7 @@
 
 
 
-import claudeCodeExecute from ".";
+import claudeCodeExecute from "./index";
 import pkg from './package.json';
 const prompt = process.argv.slice(2).join(' ')
 if (!prompt) {
