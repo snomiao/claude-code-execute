@@ -1,10 +1,11 @@
 {
   "name": "claude-code-execute",
   "version": "1.0.0",
-  "author": "",
-  "main": "index.js",
+  "author": "Snowstar Miao <snomiao@gmail.com>",
+  "main": "dist/index.js",
   "module": "index.ts",
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/bun": "^1.2.18",
     "es-main": "^1.3.0",
     "husky": "^9.1.7",
@@ -17,21 +18,21 @@
   },
   "bin": {
     "claude-code-execute": "dist/cli.js",
-    "ccx": "dist/cli.js"
+    "ccx": "dist/cli.js",
+    "cccx": "dist/cli-continue.js"
   },
   "description": "To install dependencies:",
   "keywords": [],
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "dev": "tsx --watch cli.ts hello, world",
-    "build": "bun build cli.ts index.ts --outdir=dist --external=node-pty --target=node",
+    "build": "bun build cli.ts cli-continue.ts index.ts --outdir=dist --external=node-pty --target=node",
     "test": "bun test",
     "fmt": "prettier -w .",
     "prepare": "husky"
   },
   "type": "module",
   "dependencies": {
-    "@types/jest": "^30.0.0",
-    "yes-claude": "^1.9.0"
+    "claude-yes": "^1.10.0"
   }
 }
