@@ -4,7 +4,7 @@
     "": {
       "name": "claude-code-execute",
       "dependencies": {
-        "claude-yes": "^1.10.0",
+        "claude-yes": "1.12.1",
       },
       "devDependencies": {
         "@types/bun": "^1.2.18",
@@ -12,11 +12,11 @@
         "es-main": "^1.3.0",
         "husky": "^9.1.7",
         "prettier": "^3.6.2",
-        "semantic-release": "^24.2.6",
+        "semantic-release": "^24.2.7",
         "tsx": "^4.20.3",
       },
       "peerDependencies": {
-        "typescript": "^5",
+        "typescript": "^5.8.3",
       },
     },
   },
@@ -189,6 +189,8 @@
 
     "braces": ["braces@3.0.3", "", { "dependencies": { "fill-range": "^7.1.1" } }, "sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA=="],
 
+    "bun-pty": ["bun-pty@0.3.2", "", {}, "sha512-ZDNs03VX7uUzTTFgymM9m3nWvPNYkeWWHj7+aweI3O1F/5uu8yqdQ9HhGXjbcW8UDjVzNvVFg8UaPEvaQsEjLg=="],
+
     "bun-types": ["bun-types@1.2.18", "", { "dependencies": { "@types/node": "*" }, "peerDependencies": { "@types/react": "^19" } }, "sha512-04+Eha5NP7Z0A9YgDAzMk5PHR16ZuLVa83b26kH5+cp1qZW4F6FmAURngE7INf4tKOvCE69vYvDEwoNl1tGiWw=="],
 
     "callsites": ["callsites@3.1.0", "", {}, "sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ=="],
@@ -199,7 +201,7 @@
 
     "ci-info": ["ci-info@4.3.0", "", {}, "sha512-l+2bNRMiQgcfILUi33labAZYIWlH1kWDp+ecNo5iisRKrbm0xcRyCww71/YU0Fkw0mAFpz9bJayXPjey6vkmaQ=="],
 
-    "claude-yes": ["claude-yes@1.10.1", "", { "dependencies": { "node-pty": "^1.0.0" }, "peerDependencies": { "typescript": "^5.8.3" }, "bin": { "claude-yes": "dist/cli.js" } }, "sha512-svSif1y+R0ntM6vO0IT0QXXEgeYgxnp8H1Ip/J92rrswOoFTp2woc9pI5M69fMHtqXg2NrTMFbN3qOj57Iw0eg=="],
+    "claude-yes": ["claude-yes@1.12.1", "", { "dependencies": { "bun-pty": "^0.3.2", "node-pty": "^1.0.0" }, "peerDependencies": { "typescript": "^5.8.3" }, "bin": { "claude-yes": "dist/cli.js" } }, "sha512-/Io4/ycyzh1EFI5f+vHmKwMOK3yjvIa1cTbNKi2+6x9fQwzjUAlb9epP/ih0vGJ7ThUAK+eTRkF5t+pZQNvqFA=="],
 
     "clean-stack": ["clean-stack@5.2.0", "", { "dependencies": { "escape-string-regexp": "5.0.0" } }, "sha512-TyUIUJgdFnCISzG5zu3291TAsE77ddchd0bepon1VVQrKLGKFED4iXFEDQ24mIPdPBbyE16PK3F8MYE1CmcBEQ=="],
 

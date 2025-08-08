@@ -26,13 +26,13 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsx --watch cli.ts hello, world",
-    "build": "bun build cli.ts cli-continue.ts index.ts --outdir=dist --external=node-pty --target=node",
+    "build": "bun build cli.ts cli-continue.ts index.ts --outdir=dist --packages=external --target=node",
     "test": "bun test",
     "fmt": "prettier -w .",
     "prepare": "husky"
   },
   "type": "module",
   "dependencies": {
-    "claude-yes": "^1.10.1"
+    "claude-yes": "1.12.1"
   }
 }
