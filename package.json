@@ -33,6 +33,6 @@
   },
   "type": "module",
   "dependencies": {
-    "claude-yes": "^1"
+    "claude-yes": "^1.14.0"
   }
 }
