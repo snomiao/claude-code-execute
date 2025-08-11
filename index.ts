@@ -1,8 +1,20 @@
 // ccx = claude code execution
 import claudeYes from "claude-yes";
 
-export default async function claudeCodeExecute(...claudeArgs: string[]) {
-    await claudeYes({ claudeArgs, exitOnIdle: 30e3, continueOnCrash: true }) // overwrite default 5e3 for more stable experience
+export default async function claudeCodeExecute(
+  prompt: string,
+  options: {
+    exitOnIdle?: boolean | number;
+    continue?: boolean;
+    verbose?: boolean;
+  } = {}
+) {
+  const claudeArgs = [...(!options.continue ? [] : ["--continue"]), prompt];
+  const exitOnIdle = options.exitOnIdle ?? 60e3; // overwrite default for more stable experience
+  const props = { claudeArgs, exitOnIdle, continueOnCrash: true };
+  options.verbose &&
+    console.log("[claude-code-execute] running claude-yes with props: ", props);
+  await claudeYes(props);
 }
 
-export { removeControlCharacters } from 'claude-yes'
+export { removeControlCharacters } from "claude-yes";
