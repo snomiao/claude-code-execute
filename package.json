@@ -1,6 +1,6 @@
 {
   "name": "claude-code-execute",
-  "version": "dev",
+  "version": "0.0.0",
   "author": "Snowstar Miao <snomiao@gmail.com>",
   "main": "dist/index.js",
   "module": "index.ts",
