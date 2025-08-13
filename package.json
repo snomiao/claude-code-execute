@@ -29,7 +29,7 @@
   },
   "scripts": {
     "dev": "bun update && tsx --watch cli.ts hello, world",
-    "build": "bun build cli.ts cli-continue.ts index.ts --outdir=dist --packages=external --target=node",
+    "build": "bun build cli.ts cli-continue.ts index.ts --outdir=dist --packages=external --target=node --sourcemap",
     "test": "bun test",
     "fmt": "prettier -w .",
     "prepare": "husky"

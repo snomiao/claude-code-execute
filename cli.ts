@@ -11,7 +11,7 @@ const argv = yargs(hideBin(process.argv))
   .option("exitOnIdle", {
     type: "string",
     describe: "Exit after idle timeout (e.g. 10s, 30s, 2m)",
-    default: undefined,
+    default: "60s",
   })
   .option("continue", {
     type: "boolean",
@@ -39,11 +39,10 @@ if (!prompt) {
 }
 
 console.log(`claude-code-execute@${pkg.version}: `, prompt);
-const { exitOnIdle } = argv;
 argv.verbose &&
   console.log("[claude-code-execute] running with options:", argv);
 const ret = await claudeCodeExecute(prompt, {
-  exitOnIdle: !exitOnIdle ? undefined : enhancedMs(exitOnIdle),
+  exitOnIdle: !argv.exitOnIdle ? undefined : enhancedMs(argv.exitOnIdle),
   continue: argv.continue,
 });
 

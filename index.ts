@@ -6,12 +6,16 @@ export default async function claudeCodeExecute(
   options: {
     exitOnIdle?: number;
     continue?: boolean;
+    continueOnCrash?: boolean;
     verbose?: boolean;
   } = {}
 ) {
   const claudeArgs = [...(!options.continue ? [] : ["--continue"]), prompt];
-  const exitOnIdle = options.exitOnIdle || 60e3; // overwrite default for more stable experience
-  const props = { claudeArgs, exitOnIdle, continueOnCrash: true };
+  const props = {
+    claudeArgs,
+    exitOnIdle: options.exitOnIdle ?? 60e3,
+    continueOnCrash: options.continueOnCrash ?? true,
+  };
   options.verbose &&
     console.log("[claude-code-execute] running claude-yes with props: ", props);
   return await claudeYes(props);
