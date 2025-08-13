@@ -6,8 +6,8 @@ import claudeCodeExecute from "./index";
 import pkg from "./package.json";
 import enhancedMs from "enhanced-ms";
 
-const argv = await yargs(hideBin(process.argv))
-  .usage("Usage: $0 [options...] <prompt...>")
+const argv = yargs(hideBin(process.argv))
+  .usage("Usage: $0 [options...] [--] <prompt...>")
   .option("exitOnIdle", {
     type: "string",
     describe: "Exit after idle timeout (e.g. 10s, 30s, 2m)",
@@ -18,13 +18,18 @@ const argv = await yargs(hideBin(process.argv))
     describe: "Continue the previous session",
     default: true,
   })
+  .option("verbose", {
+    type: "boolean",
+    describe: "Enable verbose logging",
+    default: false,
+  })
   .parserConfiguration({
     "unknown-options-as-args": true,
     "halt-at-non-option": true,
   })
   .help()
   .version(pkg.version)
-  .parse();
+  .parseSync();
 
 const prompt = argv._.join(" ");
 if (!prompt) {
@@ -35,7 +40,11 @@ if (!prompt) {
 
 console.log(`claude-code-execute@${pkg.version}: `, prompt);
 const { exitOnIdle } = argv;
-await claudeCodeExecute(prompt, {
-  exitOnIdle: exitOnIdle != null && enhancedMs(exitOnIdle),
+argv.verbose &&
+  console.log("[claude-code-execute] running with options:", argv);
+const ret = await claudeCodeExecute(prompt, {
+  exitOnIdle: !exitOnIdle ? undefined : enhancedMs(exitOnIdle),
   continue: argv.continue,
 });
+
+process.exit(ret.exitCode)

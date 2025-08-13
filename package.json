@@ -32,7 +32,7 @@
   },
   "type": "module",
   "dependencies": {
-    "claude-yes": "^1.15.1",
+    "claude-yes": "^1.16.1",
     "enhanced-ms": "^4.1.0",
     "yargs": "^18.0.0"
   }

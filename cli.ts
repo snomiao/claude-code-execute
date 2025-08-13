@@ -42,7 +42,9 @@ console.log(`claude-code-execute@${pkg.version}: `, prompt);
 const { exitOnIdle } = argv;
 argv.verbose &&
   console.log("[claude-code-execute] running with options:", argv);
-await claudeCodeExecute(prompt, {
-  exitOnIdle: exitOnIdle != null && enhancedMs(exitOnIdle),
+const ret = await claudeCodeExecute(prompt, {
+  exitOnIdle: !exitOnIdle ? undefined : enhancedMs(exitOnIdle),
   continue: argv.continue,
 });
+
+process.exit(ret.exitCode)
