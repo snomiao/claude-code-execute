@@ -18,7 +18,7 @@
   "bin": {
     "claude-code-execute": "dist/cli.js",
     "ccx": "dist/cli.js",
-    "cccx": "distw/cli-continue.js"
+    "cccx": "dist/cli-continue.js"
   },
   "description": "To install dependencies:",
   "keywords": [],
