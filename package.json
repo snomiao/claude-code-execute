@@ -23,6 +23,10 @@
   "description": "To install dependencies:",
   "keywords": [],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snomiao/claude-code-execute.git"
+  },
   "scripts": {
     "dev": "bun update && tsx --watch cli.ts hello, world",
     "build": "bun build cli.ts cli-continue.ts index.ts --outdir=dist --packages=external --target=node",
