@@ -7,7 +7,7 @@ import pkg from "./package.json";
 import enhancedMs from "enhanced-ms";
 
 const argv = yargs(hideBin(process.argv))
-  .usage("Usage: $0 [options...] [--] <prompt...>")
+  .usage("Usage: $0 [options...] [--] [prompt...]")
   .option("exitOnIdle", {
     type: "string",
     describe: "Exit after idle timeout (e.g. 10s, 30s, 2m)",
@@ -32,11 +32,6 @@ const argv = yargs(hideBin(process.argv))
   .parseSync();
 
 const prompt = argv._.join(" ");
-if (!prompt) {
-  console.error(`Claude Code Execute CLI v${pkg.version}`);
-  console.error("Usage: ccx <prompt> [--exitOnIdle=<timeout>]");
-  process.exit(1);
-}
 
 console.log(`claude-code-execute@${pkg.version}: `, prompt);
 argv.verbose &&
